@@ -34,15 +34,14 @@ body:
     validations:
       required: true
 
-  - type: checkboxes
+  - type: textarea
     id: categories
     attributes:
       label: Categories
-      description: Select all that apply.
-      options:
-        - label: AI Video
-        - label: Streaming
-        - label: Developer Tools
+      description: "Select all that apply: AI Video, Streaming, Developer Tools"
+      placeholder: "AI Video, Streaming"
+    validations:
+      required: true
 
   - type: input
     id: contact
