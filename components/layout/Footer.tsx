@@ -20,6 +20,7 @@ const footerNav = [
       { label: "Foundation", href: "/foundation" },
       { label: "Blog", href: "/blog" },
       { label: "Brand", href: "/brand" },
+      { label: "Security", href: "/security" },
     ],
   },
   {
