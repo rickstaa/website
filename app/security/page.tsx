@@ -28,7 +28,7 @@ const OUT_OF_SCOPE = [
 const AWARD_TERMS = [
   {
     title: "Discretionary",
-    body: "Acknowledgment, swag, and any monetary award are at the Foundation's sole discretion. Submitting a report does not entitle you to compensation.",
+    body: "Acknowledgment, swag, and any monetary award are at the Foundation's sole discretion. Cash awards, if any, are reserved for exceptional Critical or High-severity findings; submission does not entitle you to compensation.",
   },
   {
     title: "Eligibility",
@@ -215,22 +215,25 @@ export default function SecurityPage() {
                 </h3>
                 <p className="mt-4 text-white/60 leading-relaxed">
                   Issues in this website, the Livepeer explorer, or
-                  Foundation-operated developer services. Reported via email
-                  and recognised through our gratitude program — public
-                  acknowledgment, swag, and our thanks.
+                  Foundation-operated developer services. Valid reports are
+                  recognized with public acknowledgment, swag, and our
+                  thanks. At the Foundation&apos;s sole discretion,
+                  exceptional Critical or High-severity findings may receive
+                  an additional monetary award — awards are not guaranteed
+                  and the program should not be approached as paid work.
                 </p>
                 <ul className="mt-6 space-y-2 text-sm text-white/50">
                   <li className="flex items-start gap-2">
                     <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-white/40" />
-                    Acknowledgment &amp; thanks for valid reports
+                    Acknowledgment, swag &amp; thanks for valid reports
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-white/40" />
+                    Discretionary cash awards for exceptional findings
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-white/40" />
                     Initial response within 5 business days
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-white/40" />
-                    Coordinated public disclosure once fixed
                   </li>
                 </ul>
                 <div className="mt-8">
