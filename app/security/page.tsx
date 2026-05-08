@@ -54,19 +54,15 @@ const OUT_OF_SCOPE: OutOfScopeItem[] = [
 const AWARD_TERMS = [
   {
     title: "Discretionary",
-    body: "Acknowledgment, swag, and any monetary award are at the Foundation's sole discretion. Cash awards, if any, are reserved for exceptional Critical or High-severity findings; submission does not entitle you to compensation.",
+    body: "Acknowledgment, swag, and any cash award are at the Foundation's sole discretion. Cash, if offered, is reserved for exceptional Critical or High findings — submission does not entitle you to compensation.",
   },
   {
     title: "Eligibility",
-    body: "You must be 18 or the age of majority in your jurisdiction, not an employee or contractor of the Foundation, and not a resident or national of a comprehensively sanctioned country.",
-  },
-  {
-    title: "Sanctions screening",
-    body: "Awards are subject to applicable sanctions and anti-money-laundering laws. The Foundation may require identity verification before issuing a reward and will not pay individuals on restricted-party lists.",
+    body: "You must be 18 or the local age of majority, not an employee or contractor of the Foundation, and not a resident or national of a sanctioned country. Awards may require identity verification and will not be issued to restricted-party listed individuals.",
   },
   {
     title: "First reporter",
-    body: "Only the first valid, original report of an issue is eligible. Duplicates and issues already known to the Foundation do not qualify.",
+    body: "Only the first valid, original report of an issue is eligible. Duplicates and issues already known do not qualify.",
   },
   {
     title: "License to remediate",
@@ -78,7 +74,7 @@ const AWARD_TERMS = [
   },
   {
     title: "Program changes",
-    body: "The Foundation may modify or end the program at any time. Reports submitted before a change will be evaluated under the rules in effect at the time of submission.",
+    body: "The Foundation may modify or end the program at any time. Reports are evaluated under the rules in effect when submitted.",
   },
 ];
 
@@ -151,9 +147,9 @@ export default function SecurityPage() {
               Report a vulnerability
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/65 lg:text-xl text-pretty">
-              The Livepeer Foundation works with security researchers to keep
-              the network and its surrounding services safe. We have two
-              channels depending on what you&apos;ve found.
+              We work with security researchers to keep the Livepeer network
+              and its surrounding services safe. Two channels, depending on
+              what you&apos;ve found.
             </p>
           </motion.div>
         </Container>
@@ -173,7 +169,7 @@ export default function SecurityPage() {
               <SectionHeader
                 label="Reporting Channels"
                 title="Where to send your report"
-                description="Pick the channel that matches what you found. Reports sent to the wrong channel will be redirected — but the right one gets you a faster response."
+                description="Pick the channel that matches what you found — the right one gets a faster response."
                 align="center"
               />
             </motion.div>
@@ -195,10 +191,9 @@ export default function SecurityPage() {
                   Smart contracts &amp; on-chain protocol
                 </h3>
                 <p className="mt-4 text-white/60 leading-relaxed">
-                  Vulnerabilities in the Livepeer protocol contracts, staking,
-                  delegation, reward distribution, or any on-chain logic are
-                  handled through our Immunefi bounty program, which offers
-                  cash rewards based on severity.
+                  On-chain protocol issues — contracts, staking, delegation,
+                  reward logic — handled on Immunefi with cash bounties
+                  scaled by severity.
                 </p>
                 <ul className="mt-6 space-y-2 text-sm text-white/50">
                   <li className="flex items-start gap-2">
@@ -240,13 +235,10 @@ export default function SecurityPage() {
                   Web, explorer &amp; developer services
                 </h3>
                 <p className="mt-4 text-white/60 leading-relaxed">
-                  Issues in this website, the Livepeer explorer, or
-                  Foundation-operated developer services. Valid reports are
-                  recognized with public acknowledgment, swag, and our
-                  thanks. At the Foundation&apos;s sole discretion,
-                  exceptional Critical or High-severity findings may receive
-                  an additional monetary award — awards are not guaranteed
-                  and the program should not be approached as paid work.
+                  Issues in this website, the explorer, or Foundation-operated
+                  developer services. Recognized with acknowledgment, swag,
+                  and our thanks — exceptional findings may receive a
+                  discretionary cash award.
                 </p>
                 <ul className="mt-6 space-y-2 text-sm text-white/50">
                   <li className="flex items-start gap-2">
@@ -288,7 +280,7 @@ export default function SecurityPage() {
                 label="Scope"
                 title="What this program covers"
                 align="split"
-                description="The non-protocol email channel covers Foundation-operated services. Anything on-chain belongs on Immunefi."
+                description="Email scope is limited to Foundation-operated services. Anything else routes elsewhere."
               />
             </motion.div>
 
@@ -360,7 +352,7 @@ export default function SecurityPage() {
                 >
                   {SECURITY_EMAIL}
                 </a>{" "}
-                anyway — we&apos;d rather receive a misrouted report than miss a real issue. We&apos;ll route on-chain findings to Immunefi and Inc-operated systems to Livepeer Inc on your behalf, with you cc&apos;d.
+                anyway — we&apos;ll redirect to Immunefi or Livepeer Inc on your behalf, with you cc&apos;d. Better a misrouted report than a missed one.
               </p>
             </motion.div>
           </motion.div>
@@ -381,7 +373,7 @@ export default function SecurityPage() {
               <SectionHeader
                 label="Writing a Report"
                 title="What to include"
-                description="A good report is short but complete. The clearer the steps to reproduce, the faster we can verify and fix the issue."
+                description="Short but complete. The clearer the repro, the faster the fix."
                 align="center"
               />
             </motion.div>
@@ -431,18 +423,15 @@ export default function SecurityPage() {
               className="mt-12 rounded-xl border border-white/[0.07] bg-[#1a1a1a] p-8 lg:p-10"
             >
               <p className="text-white/70 leading-relaxed">
-                If you make a good-faith effort to comply with this policy
-                during your security research, the Livepeer Foundation will
-                consider your research authorized. We will not pursue legal
-                action against you, and we will work with you to understand
-                and resolve the issue quickly.
+                Good-faith research that follows this policy is authorized.
+                We won&apos;t pursue legal action, and we&apos;ll work with
+                you to resolve the issue.
               </p>
               <p className="mt-5 text-white/70 leading-relaxed">
                 Good faith means: don&apos;t exfiltrate user data beyond what
-                is needed to demonstrate impact, don&apos;t degrade or
-                interrupt service, don&apos;t publicly disclose before we have
-                had a reasonable chance to fix the issue, and don&apos;t use
-                the vulnerability for anything other than reporting it.
+                proves impact, don&apos;t degrade service, don&apos;t disclose
+                before we&apos;ve had a chance to fix, and don&apos;t use the
+                finding for anything other than the report.
               </p>
               <p className="mt-5 text-sm text-white/40">
                 Adapted from the{" "}
