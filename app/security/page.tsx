@@ -25,6 +25,37 @@ const OUT_OF_SCOPE = [
   { label: "Already-reported issues, social engineering, DoS / volumetric attacks" },
 ];
 
+const AWARD_TERMS = [
+  {
+    title: "Discretionary",
+    body: "Acknowledgment, swag, and any monetary award are at the Foundation's sole discretion. Submitting a report does not entitle you to compensation.",
+  },
+  {
+    title: "Eligibility",
+    body: "You must be 18 or the age of majority in your jurisdiction, not an employee or contractor of the Foundation, and not a resident or national of a comprehensively sanctioned country.",
+  },
+  {
+    title: "Sanctions screening",
+    body: "Awards are subject to applicable sanctions and anti-money-laundering laws. The Foundation may require identity verification before issuing a reward and will not pay individuals on restricted-party lists.",
+  },
+  {
+    title: "First reporter",
+    body: "Only the first valid, original report of an issue is eligible. Duplicates and issues already known to the Foundation do not qualify.",
+  },
+  {
+    title: "License to remediate",
+    body: "By submitting a report, you grant the Foundation a perpetual, royalty-free license to use its contents to investigate and fix the issue.",
+  },
+  {
+    title: "No relationship",
+    body: "Participation does not create an employment, agency, or partnership relationship with the Foundation.",
+  },
+  {
+    title: "Program changes",
+    body: "The Foundation may modify or end the program at any time. Reports submitted before a change will be evaluated under the rules in effect at the time of submission.",
+  },
+];
+
 const REPORT_TIPS = [
   {
     num: "01",
@@ -374,6 +405,63 @@ export default function SecurityPage() {
                 .
               </p>
             </motion.div>
+          </motion.div>
+        </Container>
+      </section>
+
+      {/* ---- Eligibility & award terms ---- */}
+      <section className="relative py-16 sm:py-24 lg:py-32">
+        <div className="divider-gradient absolute top-0 right-0 left-0" />
+        <Container>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ staggerChildren: 0.05 }}
+            className="mx-auto max-w-3xl"
+          >
+            <motion.div variants={fadeUp} transition={{ duration: 0.5 }}>
+              <SectionHeader
+                label="Eligibility & Award Terms"
+                title="Program rules"
+                align="center"
+              />
+            </motion.div>
+
+            <motion.ol
+              variants={fadeUp}
+              transition={{ duration: 0.5 }}
+              className="mt-12 divide-y divide-white/[0.06] rounded-xl border border-white/[0.07] bg-[#1a1a1a]"
+            >
+              {AWARD_TERMS.map((term, i) => (
+                <li key={term.title} className="flex gap-6 p-6 sm:p-8">
+                  <span className="font-mono text-[11px] tracking-wider text-white/25 pt-1 shrink-0">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <div>
+                    <h3 className="text-base font-medium text-white">{term.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-white/60">{term.body}</p>
+                  </div>
+                </li>
+              ))}
+            </motion.ol>
+
+            <motion.p
+              variants={fadeUp}
+              transition={{ duration: 0.5 }}
+              className="mt-6 text-center text-xs text-white/35"
+            >
+              Smart contract reports are governed by the{" "}
+              <a
+                href={IMMUNEFI_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/55 underline-offset-4 hover:text-white hover:underline"
+              >
+                Immunefi program rules
+              </a>
+              , not these terms.
+            </motion.p>
           </motion.div>
         </Container>
       </section>
