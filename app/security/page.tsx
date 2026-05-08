@@ -19,9 +19,35 @@ const IN_SCOPE = [
   { label: "Developer dashboard & gateway services" },
 ];
 
-const OUT_OF_SCOPE = [
+const INC_SECURITY_EMAIL = "security@livepeer.org";
+
+type OutOfScopeItem = {
+  label: string;
+  note?: string;
+  description?: React.ReactNode;
+};
+
+const OUT_OF_SCOPE: OutOfScopeItem[] = [
   { label: "Smart contracts & on-chain protocol", note: "Report via Immunefi" },
-  { label: "Third-party products built on Livepeer", note: "Contact the operator directly" },
+  {
+    label: "Livepeer Inc-operated products and subdomains",
+    description: (
+      <>
+        Includes <code className="font-mono text-[12px] text-white/80">livepeer.studio</code>,{" "}
+        <code className="font-mono text-[12px] text-white/80">livepeer.monster</code>, and any{" "}
+        <code className="font-mono text-[12px] text-white/80">*.livepeer.org</code> subdomain
+        not listed as in-scope above. Contact{" "}
+        <a
+          href={`mailto:${INC_SECURITY_EMAIL}`}
+          className="text-white/80 underline-offset-4 hover:text-white hover:underline"
+        >
+          {INC_SECURITY_EMAIL}
+        </a>
+        .
+      </>
+    ),
+  },
+  { label: "Third-party products built on Livepeer", note: "Contact the operator" },
   { label: "Already-reported issues, social engineering, DoS / volumetric attacks" },
 ];
 
@@ -308,12 +334,35 @@ export default function SecurityPage() {
                             {item.note}
                           </span>
                         )}
+                        {item.description && (
+                          <p className="mt-2 text-sm leading-relaxed text-white/45">
+                            {item.description}
+                          </p>
+                        )}
                       </div>
                     </li>
                   ))}
                 </ul>
               </motion.div>
             </div>
+
+            <motion.div
+              variants={fadeUp}
+              transition={{ duration: 0.5 }}
+              className="mt-8 rounded-xl border border-white/[0.04] bg-white/[0.015] p-6 text-center"
+            >
+              <p className="text-sm leading-relaxed text-white/55 text-pretty">
+                <span className="font-medium text-white/80">Not sure if it&apos;s in scope?</span>{" "}
+                Email{" "}
+                <a
+                  href={`mailto:${SECURITY_EMAIL}`}
+                  className="text-white/80 underline-offset-4 hover:text-white hover:underline"
+                >
+                  {SECURITY_EMAIL}
+                </a>{" "}
+                anyway — we&apos;d rather receive a misrouted report than miss a real issue. We&apos;ll route on-chain findings to Immunefi and Inc-operated systems to Livepeer Inc on your behalf, with you cc&apos;d.
+              </p>
+            </motion.div>
           </motion.div>
         </Container>
       </section>
