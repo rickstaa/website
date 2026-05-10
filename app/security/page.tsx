@@ -54,15 +54,7 @@ const OUT_OF_SCOPE: OutOfScopeItem[] = [
 const AWARD_TERMS = [
   {
     title: "Discretionary",
-    body: "Acknowledgment, swag, and any cash award are at the Foundation's sole discretion. Cash, if offered, is reserved for exceptional Critical or High findings — submission does not entitle you to compensation.",
-  },
-  {
-    title: "Eligibility",
-    body: "You must be 18 or the local age of majority, not an employee or contractor of the Foundation, and not on a sanctions list maintained by OFAC, the EU, or the UK. Awards, if any, may require identity verification.",
-  },
-  {
-    title: "First reporter",
-    body: "Only the first valid, original report of an issue is eligible. Duplicates and issues already known do not qualify.",
+    body: "Acknowledgment and any other recognition are at the Foundation's sole discretion. Submission does not entitle you to compensation.",
   },
   {
     title: "License to remediate",
@@ -236,9 +228,9 @@ export default function SecurityPage() {
                 </h3>
                 <p className="mt-4 text-white/60 leading-relaxed">
                   Issues in this website, the explorer, or Foundation-operated
-                  developer services. Recognized with public acknowledgment,
-                  swag, and our thanks — this is an informal program and
-                  terms may evolve.
+                  developer services. Reports are recognized through public
+                  acknowledgment. This is an informal program and terms may
+                  evolve.
                 </p>
                 <ul className="mt-6 space-y-2 text-sm text-white/50">
                   <li className="flex items-start gap-2">
@@ -247,7 +239,7 @@ export default function SecurityPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-white/40" />
-                    Acknowledgment, swag &amp; thanks for valid reports
+                    Public acknowledgment of valid reports
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-white/40" />
