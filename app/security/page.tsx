@@ -58,7 +58,7 @@ const AWARD_TERMS = [
   },
   {
     title: "Eligibility",
-    body: "You must be 18 or the local age of majority, not an employee or contractor of the Foundation, and not a resident or national of a sanctioned country. Awards may require identity verification and will not be issued to restricted-party listed individuals.",
+    body: "You must be 18 or the local age of majority, not an employee or contractor of the Foundation, and not on a sanctions list maintained by OFAC, the EU, or the UK. Awards, if any, may require identity verification.",
   },
   {
     title: "First reporter",
@@ -236,22 +236,22 @@ export default function SecurityPage() {
                 </h3>
                 <p className="mt-4 text-white/60 leading-relaxed">
                   Issues in this website, the explorer, or Foundation-operated
-                  developer services. Recognized with acknowledgment, swag,
-                  and our thanks — exceptional findings may receive a
-                  discretionary cash award.
+                  developer services. Recognized with public acknowledgment,
+                  swag, and our thanks — this is an informal program and
+                  terms may evolve.
                 </p>
                 <ul className="mt-6 space-y-2 text-sm text-white/50">
+                  <li className="flex items-start gap-2">
+                    <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-white/40" />
+                    Safe harbor for good-faith research
+                  </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-white/40" />
                     Acknowledgment, swag &amp; thanks for valid reports
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-white/40" />
-                    Discretionary cash awards for exceptional findings
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-white/40" />
-                    Initial response within 5 business days
+                    We aim to respond within 5 business days
                   </li>
                 </ul>
                 <div className="mt-8">
@@ -337,24 +337,6 @@ export default function SecurityPage() {
                 </ul>
               </motion.div>
             </div>
-
-            <motion.div
-              variants={fadeUp}
-              transition={{ duration: 0.5 }}
-              className="mt-8 rounded-xl border border-white/[0.04] bg-white/[0.015] p-6 text-center"
-            >
-              <p className="text-sm leading-relaxed text-white/55 text-pretty">
-                <span className="font-medium text-white/80">Not sure if it&apos;s in scope?</span>{" "}
-                Email{" "}
-                <a
-                  href={`mailto:${SECURITY_EMAIL}`}
-                  className="text-white/80 underline-offset-4 hover:text-white hover:underline"
-                >
-                  {SECURITY_EMAIL}
-                </a>{" "}
-                anyway — we&apos;ll redirect to Immunefi or Livepeer Inc on your behalf, with you cc&apos;d. Better a misrouted report than a missed one.
-              </p>
-            </motion.div>
           </motion.div>
         </Container>
       </section>
@@ -425,13 +407,17 @@ export default function SecurityPage() {
               <p className="text-white/70 leading-relaxed">
                 Good-faith research that follows this policy is authorized.
                 We won&apos;t pursue legal action, and we&apos;ll work with
-                you to resolve the issue.
+                you to resolve the issue. Safe harbor applies only to systems
+                listed as in-scope above — the Foundation cannot grant safe
+                harbor over systems it does not operate.
               </p>
               <p className="mt-5 text-white/70 leading-relaxed">
                 Good faith means: don&apos;t exfiltrate user data beyond what
                 proves impact, don&apos;t degrade service, don&apos;t disclose
-                before we&apos;ve had a chance to fix, and don&apos;t use the
-                finding for anything other than the report.
+                publicly for at least 90 days after reporting (or until
+                we&apos;ve fixed and acknowledged the issue, whichever is
+                sooner), and don&apos;t use the finding for anything other
+                than the report.
               </p>
               <p className="mt-5 text-sm text-white/40">
                 Adapted from the{" "}
